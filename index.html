@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Benim İlk Sitem</title>
+    <title>Hacker Tarzı Sitem!</title>
     <style>
-        body { background: #f0f0f0; text-align: center; padding: 50px; }
-        h1 { color: purple; }
+        /* Matrix efekti için arkaplan ayarları */
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            color: #0f0; /* Yeşil renk */
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+
+        /* Yazılar için stil */
+        .guzel-sozler {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        /* Matrix yağmuru için canvas */
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Bu Siteyi Telefonumdan Yaptım! 😎</h1>
-    <p>GitHub sayesinde herkes görebilir.</p>
+    <canvas id="matrix"></canvas> <!-- Matrix efekti burada -->
+
+    <div class="guzel-sozler">
+        <h1>✨ Bilgelik Yağmuru ✨</h1>
+        <p>"Kod yazmak, dünyayı değiştirmenin büyülü bir yoludur."</p>
+        <p>"Hatalar, henüz keşfedilmemiş çözümlerdir."</p>
+        <p>🚀 Deepseek ile öğreniyorum!</p>
+    </div>
+
+    <!-- Matrix efekti için JavaScript -->
+    <script>
+        // Matrix yağmuru kodu
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const drops = [];
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+    </script>
 </body>
 </html>
