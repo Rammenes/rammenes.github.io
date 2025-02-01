@@ -1,120 +1,143 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminus Protocol</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Terminus Protocol - Test Aşamasında</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* ÖNCEKİ TÜM STİLLER AYNI KALDI */
-        
-        /* YENİ EKLENEN STİLLER */
-        .test-notice {
-            background: rgba(96,239,255,0.1);
-            border: 2px solid #3B82F6;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: red;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .container {
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        .test-warning {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .content {
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
         }
 
         .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 3rem 0;
-            flex-wrap: wrap;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #222;
         }
 
-        .social-link {
-            padding: 12px 25px;
-            border-radius: 30px;
-            color: white !important;
+        .social-links a {
+            color: white;
             text-decoration: none;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin: 0 15px;
+            font-size: 24px;
         }
 
-        .twitter { background: #1DA1F2; }
-        .telegram { background: #0088CC; }
-        .instagram { background: linear-gradient(45deg, #405DE6, #833AB4, #E1306C); }
-        .tiktok { background: #000000; }
+        .social-links a:hover {
+            color: #FFD700;
+        }
 
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .spacer {
+            height: 1000px; /* Sayfayı uzatmak için büyük boşluk */
         }
     </style>
 </head>
 <body>
-    <!-- DİL BUTONU -->
-    <button class="lang-btn" onclick="toggleLanguage()">EN/TR</button>
 
-    <div class="container">
-        <!-- TEST BİLDİRİMİ -->
-        <div class="test-notice">
-            <h3 id="testTitle">🚧 Test Aşaması Uyarısı</h3>
-            <p id="testText">
-                Bu protokol şu anda <strong>testnet ortamında</strong> deneme sürümü olarak çalışmaktadır. 
-                Ana ağ lansmanı için akademik partnerlerimizle birlikte ekonomik modeli optimize ediyoruz.
-            </p>
-        </div>
-
-        <!-- ÖNCEKİ İÇERİK AYNEN KALDI -->
-        <!-- ANA GÖRSEL, BAŞLIK, BÖLÜMLER VS. -->
-
-        <!-- SOSYAL MEDYA BUTONLARI -->
-        <div class="social-links">
-            <a href="#" class="social-link twitter">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-            </a>
-            <a href="#" class="social-link telegram">
-                <i class="fab fa-telegram"></i>
-                <span>Telegram</span>
-            </a>
-            <a href="#" class="social-link instagram">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="#" class="social-link tiktok">
-                <i class="fab fa-tiktok"></i>
-                <span>TikTok</span>
-            </a>
-        </div>
-
-        <!-- FOOTER LOGO -->
-        <img 
-            src="images/terminus-gorsel.png.webp" 
-            alt="Küçük Logo" 
-            class="footer-logo"
-        >
+    <div class="header">
+        ⚠️ Terminus Protocol şu anda test aşamasındadır. Kullanım riski size aittir! ⚠️
     </div>
 
-    <script>
-        // ÇEVİRİLER GÜNCELLENDİ
-        const translations = {
-            tr: {
-                testTitle: "🚧 Test Aşaması Uyarısı",
-                testText: "Bu protokol şu anda <strong>testnet ortamında</strong> deneme sürümü olarak çalışmaktadır. Ana ağ lansmanı için akademik partnerlerimizle birlikte ekonomik modeli optimize ediyoruz.",
-                // DİĞER ÇEVİRİLER AYNI
-            },
-            en: {
-                testTitle: "🚧 Beta Testing Notice",
-                testText: "This protocol is currently running as a <strong>testnet beta version</strong>. We're optimizing the economic model with academic partners for mainnet launch.",
-                // DİĞER ÇEVİRİLER AYNI
-            }
-        };
+    <div class="container">
+        <h1>Terminus Protocol</h1>
 
-        function updateContent() {
-            // YENİ ELEMENTLERİ GÜNCELLE
-            document.getElementById('testTitle').innerHTML = translations[currentLang].testTitle;
-            document.getElementById('testText').innerHTML = translations[currentLang].testText;
-            // DİĞER GÜNCELLEMELER AYNI
-        }
-    </script>
+        <div class="test-warning">
+            🚧 Bu proje henüz tamamlanmamıştır ve test aşamasındadır. Kullanırken dikkatli olun! 🚧
+        </div>
+
+        <div class="content">
+            <p>Terminus Protocol, merkeziyetsiz bir finans (DeFi) ekosistemini geliştirmek amacıyla oluşturulmuş yeni nesil bir projedir.</p>
+            <p>Geliştirme ekibimiz, test süreçlerini devam ettirmekte olup, kullanıcılarımızın geri bildirimlerini dikkate alarak güncellemeler yapmaktadır.</p>
+            <p>Projenin yol haritası, token ekonomisi ve teknik dokümantasyonu hakkında daha fazla bilgi almak için bizi sosyal medya hesaplarımızdan takip edebilirsiniz.</p>
+
+            <h2>📌 Projenin Özellikleri</h2>
+            <ul>
+                <li>✔️ Merkeziyetsiz akıllı kontratlar</li>
+                <li>✔️ Hızlı ve güvenli işlem altyapısı</li>
+                <li>✔️ Kullanıcı dostu arayüz</li>
+                <li>✔️ Topluluk odaklı yönetişim modeli</li>
+                <li>✔️ Katılımcılar için ödüller</li>
+            </ul>
+
+            <h2>📢 Geliştirme Güncellemeleri</h2>
+            <p>Son güncellemeler ile birlikte, Terminus Protocol'ün testnet sürümünde aşağıdaki iyileştirmeler yapılmıştır:</p>
+            <ul>
+                <li>🔹 Yeni güvenlik önlemleri eklendi</li>
+                <li>🔹 Kullanıcı geri bildirimlerine göre UI iyileştirildi</li>
+                <li>🔹 Token transfer süreçleri optimize edildi</li>
+                <li>🔹 Akıllı kontrat hataları düzeltildi</li>
+            </ul>
+
+            <h2>💡 Terminus Protocol Nedir?</h2>
+            <p>
+                Terminus Protocol, tamamen merkeziyetsiz bir finans protokolüdür. Blockchain teknolojisinin sağladığı güvenlik
+                ve şeffaflık ilkeleri doğrultusunda, kullanıcıların hızlı ve güvenilir işlemler yapmasını sağlar.
+            </p>
+
+            <h2>📅 Yol Haritası</h2>
+            <p>Projemizin gelişim süreci aşağıdaki aşamalardan oluşmaktadır:</p>
+            <ul>
+                <li>🔜 Q1 2025: Testnet lansmanı</li>
+                <li>🔜 Q2 2025: Mainnet lansmanı</li>
+                <li>🔜 Q3 2025: Topluluk yönetişim sisteminin entegrasyonu</li>
+                <li>🔜 Q4 2025: Genişletilmiş ekosistem ve yeni ortaklıklar</li>
+            </ul>
+        </div>
+
+        <div class="spacer"></div> <!-- Sayfayı uzatmak için büyük boşluk -->
+
+        <div class="social-links">
+            <p>Bizi takip edin:</p>
+            <a href="https://tiktok.com/@yourproject" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://twitter.com/yourproject" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://t.me/yourproject" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://instagram.com/yourproject" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
 </body>
 </html>
