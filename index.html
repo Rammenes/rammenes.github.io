@@ -41,7 +41,7 @@
             box-shadow: 0 0 15px rgba(96,239,255,0.4);
         }
 
-        /* TEK GÖRSEL */
+        /* ANA GÖRSEL */
         .hero-image {
             width: 100%;
             max-width: 600px;
@@ -59,22 +59,60 @@
 
         /* İÇERİK YAPISI */
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .section {
-            margin: 50px 0;
-            padding: 30px;
+            margin: 60px 0;
+            padding: 40px;
             background: rgba(255,255,255,0.05);
             border-radius: 15px;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        h2 { color: #60EFFF; margin: 2rem 0 1.5rem; }
-        ul { padding-left: 2rem; }
-        li { margin: 1rem 0; }
+        h1 { 
+            font-size: 3rem; 
+            text-align: center;
+            margin: 2rem 0;
+            background: linear-gradient(45deg, #00FF87, #60EFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 { 
+            color: #60EFFF; 
+            margin: 3rem 0 2rem;
+            font-size: 2rem;
+        }
+
+        .highlight-box {
+            background: rgba(96,239,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #3B82F6;
+            margin: 2rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+
+        .footer-logo {
+            width: 120px;
+            margin: 4rem auto 2rem;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -82,7 +120,7 @@
     <button class="lang-btn" onclick="toggleLanguage()">EN/TR</button>
 
     <div class="container">
-        <!-- TEK GÖRSEL -->
+        <!-- ANA GÖRSEL -->
         <img 
             src="images/terminus-gorsel.png.webp"
             alt="Terminus Protokol Şeması" 
@@ -92,30 +130,81 @@
         <!-- BAŞLIK -->
         <h1 id="mainTitle">Terminus Protokolü</h1>
 
-        <!-- ANA İÇERİK -->
+        <!-- PROBLEM & ÇÖZÜM -->
         <div class="section">
-            <h2 id="section1Title">Devrim Niteliğinde Sistem</h2>
-            <p id="section1Text">
-                Terminus Protocol, blockchain ekosistemindeki token enflasyonunu kökten çözmek için tasarlanmış matematiksel bir düzenleyici mekanizmadır. Her yeni token oluşturma işlemi, geometrik olarak artan TTC yakma gereksinimi ile kontrol altına alınır.
+            <h2 id="problemTitle">Problem: Kontrolsüz Token Enflasyonu</h2>
+            <p id="problemText">
+                Günümüz kripto ekosisteminde günde ortalama 500+ yeni token oluşturuluyor. Bu projelerin %92'si ilk 30 gün içinde ölüyor. Yatırımcılar her ay ~$2.3M kaybediyor. Merkeziyetsiz finansın temel vaadi olan "adil sistem" tehdit altında.
+            </p>
+
+            <div class="highlight-box">
+                <h3 id="solutionTitle">Terminus Çözümü</h3>
+                <p id="solutionText">
+                    Protokolümüz, yeni token oluşturma maliyetini geometrik artışla kontrol ediyor. İlk token için 100 TTC yakma gereksinimi, 5. tokenda 1.000.000 TTC'ye çıkıyor. Böylece sadece gerçek projeler hayatta kalıyor.
+                </p>
+            </div>
+        </div>
+
+        <!-- TEKNİK DETAYLAR -->
+        <div class="section">
+            <h2 id="techTitle">Teknik Mimarimiz</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10^18</h3>
+                    <p id="stat1Text">Maksimum Yakma Katsayısı</p>
+                </div>
+                <div class="stat-item">
+                    <h3>%100</h3>
+                    <p id="stat2Text">On-Chain Denetim</p>
+                </div>
+                <div class="stat-item">
+                    <h3>ZK-Rollups</h3>
+                    <p id="stat3Text">Gizlilik Odaklı</p>
+                </div>
+            </div>
+
+            <h3 id="architectureTitle">Akıllı Kontrat Mimaris</h3>
+            <p id="architectureText">
+                Temel mekanizma 3 katmandan oluşur: <br>
+                1. Anti-Spawn Layer: Yeni token oluşturma mantığı<br>
+                2. Burn Engine: Token yakma ve dağıtım sistemi<br>
+                3. AI Oracle: Proje analizi için zincir dışı veri kaynakları
             </p>
         </div>
 
+        <!-- TOKENOMİK -->
         <div class="section">
-            <h2 id="section2Title">Temel Özellikler</h2>
-            <ul id="featuresList">
-                <li>✔️ Otomatik Maliyet Artışı: Her yeni token için yakma miktarı 10x artar</li>
-                <li>✔️ AI Destekli Filtreleme: Şüpheli projeleri otomatik tespit eder</li>
-                <li>✔️ Deflasyonist Model: Yakılan tokenlar kalıcı olarak yok edilir</li>
-                <li>✔️ DAO Yönetişim: Topluluk kararlarla sistemi yönetir</li>
-            </ul>
-        </div>
+            <h2 id="tokenomicsTitle">Tokenomik Model</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1.000.000</h3>
+                    <p id="supplyText">Maksimum Arz</p>
+                </div>
+                <div class="stat-item">
+                    <h3>%70</h3>
+                    <p id="burnText">Yakılan Tokenlar</p>
+                </div>
+                <div class="stat-item">
+                    <h3>%15</h3>
+                    <p id="rewardText">Topluluk Ödülleri</p>
+                </div>
+            </div>
 
-        <div class="section">
-            <h2 id="section3Title">Teknik Detaylar</h2>
-            <p id="section3Text">
-                Protokolümüz Ethereum L2 üzerinde çalışır ve akıllı kontratlarımız CertiK denetiminden geçmiştir. Başlangıç token arzı 1 milyon TTC ile sınırlı olup, her yeni proje lansmanında bu miktarın %3'ü yakılır.
+            <h3 id="distributionTitle">Dağılım Planı</h3>
+            <p id="distributionText">
+                • %40 Topluluk Satışı (4 yıl vesting)<br>
+                %30 Likidite Havuzu<br>
+                %20 Ekosistem Geliştirme<br>
+                %10 Takım & Danışmanlar (2 yıl kilitli)
             </p>
         </div>
+
+        <!-- FOOTER LOGO -->
+        <img 
+            src="images/terminus-gorsel.png.webp" 
+            alt="Küçük Logo" 
+            class="footer-logo"
+        >
     </div>
 
     <script>
@@ -124,31 +213,41 @@
         const translations = {
             tr: {
                 mainTitle: "Terminus Protokolü",
-                section1Title: "Devrim Niteliğinde Sistem",
-                section1Text: "Terminus Protocol, blockchain ekosistemindeki token enflasyonunu kökten çözmek için tasarlanmış matematiksel bir düzenleyici mekanizmadır. Her yeni token oluşturma işlemi, geometrik olarak artan TTC yakma gereksinimi ile kontrol altına alınır.",
-                section2Title: "Temel Özellikler",
-                featuresList: [
-                    "✔️ Otomatik Maliyet Artışı: Her yeni token için yakma miktarı 10x artar",
-                    "✔️ AI Destekli Filtreleme: Şüpheli projeleri otomatik tespit eder",
-                    "✔️ Deflasyonist Model: Yakılan tokenlar kalıcı olarak yok edilir",
-                    "✔️ DAO Yönetişim: Topluluk kararlarla sistemi yönetir"
-                ],
-                section3Title: "Teknik Detaylar",
-                section3Text: "Protokolümüz Ethereum L2 üzerinde çalışır ve akıllı kontratlarımız CertiK denetiminden geçmiştir. Başlangıç token arzı 1 milyon TTC ile sınırlı olup, her yeni proje lansmanında bu miktarın %3'ü yakılır."
+                problemTitle: "Problem: Kontrolsüz Token Enflasyonu",
+                problemText: "Günümüz kripto ekosisteminde günde ortalama 500+ yeni token oluşturuluyor. Bu projelerin %92'si ilk 30 gün içinde ölüyor. Yatırımcılar her ay ~$2.3M kaybediyor. Merkeziyetsiz finansın temel vaadi olan 'adil sistem' tehdit altında.",
+                solutionTitle: "Terminus Çözümü",
+                solutionText: "Protokolümüz, yeni token oluşturma maliyetini geometrik artışla kontrol ediyor. İlk token için 100 TTC yakma gereksinimi, 5. tokenda 1.000.000 TTC'ye çıkıyor. Böylece sadece gerçek projeler hayatta kalıyor.",
+                techTitle: "Teknik Mimarimiz",
+                stat1Text: "Maksimum Yakma Katsayısı",
+                stat2Text: "On-Chain Denetim",
+                stat3Text: "Gizlilik Odaklı",
+                architectureTitle: "Akıllı Kontrat Mimarisi",
+                architectureText: "Temel mekanizma 3 katmandan oluşur: <br>1. Anti-Spawn Layer: Yeni token oluşturma mantığı<br>2. Burn Engine: Token yakma ve dağıtım sistemi<br>3. AI Oracle: Proje analizi için zincir dışı veri kaynakları",
+                tokenomicsTitle: "Tokenomik Model",
+                supplyText: "Maksimum Arz",
+                burnText: "Yakılan Tokenlar",
+                rewardText: "Topluluk Ödülleri",
+                distributionTitle: "Dağılım Planı",
+                distributionText: "• %40 Topluluk Satışı (4 yıl vesting)<br>• %30 Likidite Havuzu<br>• %20 Ekosistem Geliştirme<br>• %10 Takım & Danışmanlar (2 yıl kilitli)"
             },
             en: {
                 mainTitle: "Terminus Protocol",
-                section1Title: "Revolutionary System",
-                section1Text: "Terminus Protocol is a mathematical regulatory mechanism designed to fundamentally solve token inflation in the blockchain ecosystem. Each new token creation is controlled by exponentially increasing TTC burning requirements.",
-                section2Title: "Key Features",
-                featuresList: [
-                    "✔️ Automatic Cost Increase: Burn amount increases 10x per new token",
-                    "✔️ AI-Powered Filtering: Automatically detects suspicious projects",
-                    "✔️ Deflationary Model: Burned tokens are permanently destroyed",
-                    "✔️ DAO Governance: Community governs through proposals"
-                ],
-                section3Title: "Technical Specifications",
-                section3Text: "Our protocol operates on Ethereum L2 with CertiK-audited smart contracts. Initial token supply is capped at 1 million TTC, with 3% of supply burned per new project launch."
+                problemTitle: "Problem: Uncontrolled Token Inflation",
+                problemText: "In today's crypto ecosystem, 500+ new tokens are created daily. 92% of these projects die within the first 30 days. Investors lose ~$2.3M monthly. The core promise of DeFi - 'fair system' - is under threat.",
+                solutionTitle: "Terminus Solution",
+                solutionText: "Our protocol controls token creation costs with geometric progression. The initial 100 TTC burn requirement escalates to 1,000,000 TTC by the 5th token. Only legitimate projects survive.",
+                techTitle: "Technical Architecture",
+                stat1Text: "Max Burn Coefficient",
+                stat2Text: "On-Chain Audit",
+                stat3Text: "Privacy Focused",
+                architectureTitle: "Smart Contract Architecture",
+                architectureText: "Core mechanism has 3 layers: <br>1. Anti-Spawn Layer: Token creation logic<br>2. Burn Engine: Token burning & distribution<br>3. AI Oracle: Off-chain data for project analysis",
+                tokenomicsTitle: "Tokenomics Model",
+                supplyText: "Max Supply",
+                burnText: "Burned Tokens",
+                rewardText: "Community Rewards",
+                distributionTitle: "Distribution Plan",
+                distributionText: "• 40% Community Sale (4yr vesting)<br>• 30% Liquidity Pool<br>• 20% Ecosystem Development<br>• 10% Team & Advisors (2yr locked)"
             }
         };
 
@@ -158,18 +257,24 @@
         }
 
         function updateContent() {
-            // Metinleri Güncelle
-            document.getElementById('mainTitle').textContent = translations[currentLang].mainTitle;
-            document.getElementById('section1Title').textContent = translations[currentLang].section1Title;
-            document.getElementById('section1Text').textContent = translations[currentLang].section1Text;
-            document.getElementById('section2Title').textContent = translations[currentLang].section2Title;
-            document.getElementById('section3Title').textContent = translations[currentLang].section3Title;
-            document.getElementById('section3Text').textContent = translations[currentLang].section3Text;
-            
-            // Madde Listesini Güncelle
-            const features = translations[currentLang].featuresList;
-            const listElement = document.getElementById('featuresList');
-            listElement.innerHTML = features.map(item => `<li>${item}</li>`).join('');
+            // Tüm elementleri güncelle
+            document.getElementById('mainTitle').innerHTML = translations[currentLang].mainTitle;
+            document.getElementById('problemTitle').textContent = translations[currentLang].problemTitle;
+            document.getElementById('problemText').textContent = translations[currentLang].problemText;
+            document.getElementById('solutionTitle').textContent = translations[currentLang].solutionTitle;
+            document.getElementById('solutionText').textContent = translations[currentLang].solutionText;
+            document.getElementById('techTitle').textContent = translations[currentLang].techTitle;
+            document.getElementById('stat1Text').textContent = translations[currentLang].stat1Text;
+            document.getElementById('stat2Text').textContent = translations[currentLang].stat2Text;
+            document.getElementById('stat3Text').textContent = translations[currentLang].stat3Text;
+            document.getElementById('architectureTitle').textContent = translations[currentLang].architectureTitle;
+            document.getElementById('architectureText').innerHTML = translations[currentLang].architectureText;
+            document.getElementById('tokenomicsTitle').textContent = translations[currentLang].tokenomicsTitle;
+            document.getElementById('supplyText').textContent = translations[currentLang].supplyText;
+            document.getElementById('burnText').textContent = translations[currentLang].burnText;
+            document.getElementById('rewardText').textContent = translations[currentLang].rewardText;
+            document.getElementById('distributionTitle').textContent = translations[currentLang].distributionTitle;
+            document.getElementById('distributionText').innerHTML = translations[currentLang].distributionText;
         }
     </script>
 </body>
