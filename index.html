@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminus Protocol</title>
     <style>
-        /* Arka plan ve genel stil */
+        /* Genel Stil */
         body {
             background-color: #121212;
             color: white;
@@ -23,6 +23,21 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             border-bottom: 3px solid #ffcc00;
+            position: relative;
+        }
+        /* Dil Değiştirme Butonu */
+        .language-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            padding: 8px 16px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
         }
         /* Ana içerik alanı */
         .container {
@@ -43,12 +58,6 @@
             line-height: 1.6;
             font-size: 18px;
         }
-        /* Logo */
-        .logo {
-            display: block;
-            margin: 20px auto;
-            width: 180px;
-        }
         /* Alt bilgi */
         footer {
             text-align: center;
@@ -63,42 +72,72 @@
 
     <header>
         Terminus Protocol - Geleceğin Kripto Protokolü
+        <button class="language-btn" onclick="changeLanguage()">English</button>
     </header>
 
     <div class="container">
-        <img class="logo" src="https://raw.githubusercontent.com/KULLANICI_ADIN/terminusprotocol.github.io/main/logo.png" alt="Terminus Protocol Logo">
-
-        <h2>Terminus Protocol Nedir?</h2>
-        <p>
+        <h2 id="title1">Terminus Protocol Nedir?</h2>
+        <p id="text1">
             Terminus Protocol, dijital varlık ekosisteminde yeni bir dönemi başlatmayı amaçlayan devrim niteliğinde bir protokoldür. 
             Amacımız, gereksiz token enflasyonunu sistematik olarak önleyen bir mekanizma oluşturarak sektördeki kalitesiz projeleri 
             ortadan kaldırmak ve sürdürülebilir bir ekosistem yaratmaktır.
         </p>
 
-        <h2>Neden Terminus?</h2>
-        <p>
+        <h2 id="title2">Neden Terminus?</h2>
+        <p id="text2">
             Kripto para piyasasında her gün binlerce yeni token yaratılıyor. Bu da piyasada aşırı doygunluk yaratıyor ve yatırımcılar için 
             büyük riskler doğuruyor. Terminus Protocol, bu soruna karşı **matematiksel olarak kendini düzenleyen bir sistem** sunar. 
             Protokolümüz, her yeni token oluşturma girişiminde ekonomik engeller koyarak, yalnızca gerçekten yenilikçi projelerin hayatta kalmasını sağlar.
         </p>
 
-        <h2>Test Süreci</h2>
-        <p>
+        <h2 id="title3">Test Süreci</h2>
+        <p id="text3">
             Şu anda, Terminus Protocol’ün temel mekanizmasını test etmek için bir ön aşama başlatılmıştır. Bu test süreci, sistemin işleyişini
             gözlemlemek, topluluk geri bildirimlerini almak ve tam ölçekli lansman öncesinde gerekli iyileştirmeleri yapmak için kritik bir adımdır. 
         </p>
 
-        <h2>Gelecek Planları</h2>
-        <p>
+        <h2 id="title4">Gelecek Planları</h2>
+        <p id="text4">
             Terminus Protocol, blockchain alanında devrim yaratacak yenilikçi bir sistemdir. Yol haritamızda, topluluk yönetişimi, gelişmiş güvenlik protokolleri 
             ve büyük ölçekli entegrasyonlar yer almaktadır. Önümüzdeki süreçte, akıllı sözleşmelerin geliştirilmesi ve ağın genişletilmesi için çalışmalar devam edecektir.
         </p>
-
     </div>
 
     <footer>
         © 2025 Terminus Protocol - Tüm Hakları Saklıdır
     </footer>
+
+    <script>
+        let language = "tr";
+
+        function changeLanguage() {
+            if (language === "tr") {
+                document.getElementById("title1").innerText = "What is Terminus Protocol?";
+                document.getElementById("text1").innerText = "Terminus Protocol is a revolutionary protocol aiming to start a new era in the digital asset ecosystem. Our goal is to create a mechanism that systematically prevents unnecessary token inflation, eliminating low-quality projects in the industry and building a sustainable ecosystem.";
+
+                document.getElementById("title2").innerText = "Why Terminus?";
+                document.getElementById("text2").innerText = "Every day, thousands of new tokens are created in the cryptocurrency market. This creates excessive saturation and poses significant risks for investors. Terminus Protocol offers a **self-regulating system based on mathematics** to address this problem. Our protocol imposes economic barriers to every new token creation attempt, ensuring that only truly innovative projects survive.";
+
+                document.getElementById("title3").innerText = "Test Process";
+                document.getElementById("text3").innerText = "Currently, an initial phase has been launched to test the core mechanism of Terminus Protocol. This testing phase is a critical step to observe the system's functioning, gather community feedback, and make necessary improvements before the full-scale launch.";
+
+                document.getElementById("title4").innerText = "Future Plans";
+                document.getElementById("text4").innerText = "Terminus Protocol is an innovative system that will revolutionize the blockchain space. Our roadmap includes community governance, advanced security protocols, and large-scale integrations. In the upcoming period, efforts will continue for smart contract development and network expansion.";
+
+                document.querySelector(".language-btn").innerText = "Türkçe";
+                language = "en";
+            } else {
+                document.getElementById("title1").innerText = "Terminus Protocol Nedir?";
+                document.getElementById("text1").innerText = "Terminus Protocol, dijital varlık ekosisteminde yeni bir dönemi başlatmayı amaçlayan devrim niteliğinde bir protokoldür. Amacımız, gereksiz token enflasyonunu sistematik olarak önleyen bir mekanizma oluşturarak sektördeki kalitesiz projeleri ortadan kaldırmak ve sürdürülebilir bir ekosistem yaratmaktır.";
+
+                document.getElementById("title2").innerText = "Neden Terminus?";
+                document.getElementById("text2").innerText = "Kripto para piyasasında her gün binlerce yeni token yaratılıyor. Bu da piyasada aşırı doygunluk yaratıyor ve yatırımcılar için büyük riskler doğuruyor.";
+
+                document.querySelector(".language-btn").innerText = "English";
+                language = "tr";
+            }
+        }
+    </script>
 
 </body>
 </html>
