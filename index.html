@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminus Protocol</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts & İkonlar -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         /* Temel Stil */
         * {
@@ -18,106 +19,137 @@
         body {
             background: #0F172A;
             color: #FFFFFF;
+            line-height: 1.6;
         }
 
         /* Header */
         .header {
             text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
             background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -10%;
+            width: 120%;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(-3deg);
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(45deg, #00FF87, #60EFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(96,239,255,0.3);
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
+        /* Ana İçerik Bölümleri */
+        .section {
             padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .hero h2 {
+        .section-title {
             font-size: 2rem;
-            margin-bottom: 1.5rem;
             color: #60EFFF;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1rem;
         }
 
-        /* İnfografik Animasyon */
-        .infographic {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background: #00FF87;
+        }
+
+        /* Timeline Tasarımı (Test Süreci & Gelecek Planları) */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
             padding: 2rem;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        .step {
-            text-align: center;
-            padding: 1rem;
             background: #1E293B;
             border-radius: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
             transition: transform 0.3s;
-            flex: 1;
-            max-width: 300px;
+            border-left: 4px solid #3B82F6;
         }
 
-        .step:hover {
-            transform: translateY(-10px);
+        .timeline-item:hover {
+            transform: translateX(10px);
         }
 
-        /* İstatistikler */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            padding: 2rem;
-            text-align: center;
+        .timeline-date {
+            color: #60EFFF;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .stat-box {
+        /* İkonlu Bilgi Kutuları */
+        .info-card {
             background: #1E293B;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 1rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: #00FF87;
         }
 
         /* CTA Butonları */
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2rem;
             background: linear-gradient(45deg, #00FF87, #60EFFF);
             color: #0F172A !important;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            margin: 1rem;
-            transition: transform 0.3s;
+            margin: 1rem 0;
+            transition: all 0.3s;
         }
 
         .cta-button:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(96,239,255,0.3);
         }
 
-        /* Mobil Uyum */
+        /* Responsive Tasarım */
         @media (max-width: 768px) {
-            .infographic {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .info-card {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
     </style>
 </head>
@@ -126,41 +158,68 @@
     <header class="header">
         <h1>TERMINUS PROTOCOL</h1>
         <p>Geleceğin Kripto Protokolü</p>
+        <div style="margin-top: 2rem;">
+            <a href="#whitepaper" class="cta-button">
+                <i class='bx bxs-file-pdf'></i>
+                Whitepaper İndir
+            </a>
+            <a href="#community" class="cta-button">
+                <i class='bx bxs-group'></i>
+                Topluluğa Katıl
+            </a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Token Enflasyonunu Durduran İlk Protokol</h2>
-        <a href="#" class="cta-button">Whitepaper İndir</a>
-        <a href="#" class="cta-button">Topluluğa Katıl</a>
+    <!-- Terminus Protocol Nedir? -->
+    <section class="section">
+        <h2 class="section-title">Terminus Protocol Nedir?</h2>
+        <div class="info-card">
+            <i class='bx bxs-component info-icon'></i>
+            <div>
+                <p>Dijital varlık ekosisteminde yeni bir dönemi başlatmayı hedefleyen devrim niteliğinde bir protokoldür. Amacı, gereksiz token enflasyonunu sistematik olarak önleyen bir mekanizma oluşturarak sektördeki düşük kaliteli projeleri ortadan kaldırmak ve sürdürülebilir bir ekosistem yaratmaktır.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Nasıl Çalışır? -->
-    <div class="infographic">
-        <div class="step">
-            <h3>1. Token Çıkar</h3>
-            <p>Yeni bir token oluşturmak istiyorsun</p>
+    <!-- Neden Terminus? -->
+    <section class="section">
+        <h2 class="section-title">Neden Terminus?</h2>
+        <div class="info-card">
+            <i class='bx bxs-shield-alt-2 info-icon'></i>
+            <div>
+                <p>Kripto para piyasasında her gün binlerce yeni token yaratılmaktadır. Bu durum, piyasada aşırı doygunluğa yol açarak yatırımcılar için büyük riskler oluşturur. Terminus Protocol, matematiksel olarak kendini düzenleyen sistemimizle yalnızca gerçekten yenilikçi projelerin hayatta kalmasını sağlıyor.</p>
+            </div>
         </div>
-        <div class="step">
-            <h3>2. TTC Yak</h3>
-            <p>Geometrik artan miktarda TTC yak</p>
-        </div>
-        <div class="step">
-            <h3>3. AI Kontrolü</h3>
-            <p>Projen kalitesizse maliyet 10x artar</p>
-        </div>
-    </div>
+    </section>
 
-    <!-- İstatistikler -->
-    <div class="stats">
-        <div class="stat-box">
-            <h3>500+</h3>
-            <p>Günlük Yeni Token</p>
+    <!-- Test Süreci -->
+    <section class="section">
+        <h2 class="section-title">Test Süreci</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Aşama 1 - Q3 2024</div>
+                <p>Temel protokol mantığının test ağında denenmesi</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Aşama 2 - Q4 2024</div>
+                <p>Topluluk geri bildirimleri ile iyileştirmeler</p>
+            </div>
         </div>
-        <div class="stat-box">
-            <h3>10x</h3>
-            <p>Terminus ile Maliyet Artışı</p>
+    </section>
+
+    <!-- Gelecek Planları -->
+    <section class="section">
+        <h2 class="section-title">Gelecek Planları</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025 Q1</div>
+                <p>Akıllı sözleşme güncellemeleri ve güvenlik denetimleri</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 Q2</div>
+                <p>Büyük borsalarda listelenme süreçleri</p>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
