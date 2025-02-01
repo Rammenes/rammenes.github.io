@@ -4,140 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminus Protocol</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Genel Stil */
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: Arial, sans-serif;
+        /* Temel Stil */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        /* Başlık */
-        header {
-            background-color: #1E1E1E;
-            padding: 20px;
+
+        body {
+            background: #0F172A;
+            color: #FFFFFF;
+        }
+
+        /* Header */
+        .header {
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #ffcc00;
-            position: relative;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
         }
-        /* Dil Değiştirme Butonu */
-        .language-btn {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            padding: 8px 16px;
-            background-color: #ffcc00;
-            color: black;
-            border: none;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #00FF87, #60EFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        /* Ana içerik alanı */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #1A1A1A;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.3);
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
         }
-        /* Alt başlık */
-        h2 {
-            color: #ffcc00;
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #60EFFF;
+        }
+
+        /* İnfografik Animasyon */
+        .infographic {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1rem;
+            background: #1E293B;
+            border-radius: 1rem;
+            transition: transform 0.3s;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        /* İstatistikler */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 2rem;
             text-align: center;
         }
-        /* Açıklama metni */
-        p {
-            line-height: 1.6;
-            font-size: 18px;
+
+        .stat-box {
+            background: #1E293B;
+            padding: 1.5rem;
+            border-radius: 1rem;
         }
-        /* Alt bilgi */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1E1E1E;
-            border-top: 3px solid #ffcc00;
-            margin-top: 40px;
+
+        /* CTA Butonları */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #00FF87, #60EFFF);
+            color: #0F172A !important;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobil Uyum */
+        @media (max-width: 768px) {
+            .infographic {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        Terminus Protocol - Geleceğin Kripto Protokolü
-        <button class="language-btn" onclick="changeLanguage()">English</button>
+    <!-- Header -->
+    <header class="header">
+        <h1>TERMINUS PROTOCOL</h1>
+        <p>Geleceğin Kripto Protokolü</p>
     </header>
 
-    <div class="container">
-        <h2 id="title1">Terminus Protocol Nedir?</h2>
-        <p id="text1">
-            Terminus Protocol, dijital varlık ekosisteminde yeni bir dönemi başlatmayı amaçlayan devrim niteliğinde bir protokoldür. 
-            Amacımız, gereksiz token enflasyonunu sistematik olarak önleyen bir mekanizma oluşturarak sektördeki kalitesiz projeleri 
-            ortadan kaldırmak ve sürdürülebilir bir ekosistem yaratmaktır.
-        </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Token Enflasyonunu Durduran İlk Protokol</h2>
+        <a href="#" class="cta-button">Whitepaper İndir</a>
+        <a href="#" class="cta-button">Topluluğa Katıl</a>
+    </section>
 
-        <h2 id="title2">Neden Terminus?</h2>
-        <p id="text2">
-            Kripto para piyasasında her gün binlerce yeni token yaratılıyor. Bu da piyasada aşırı doygunluk yaratıyor ve yatırımcılar için 
-            büyük riskler doğuruyor. Terminus Protocol, bu soruna karşı **matematiksel olarak kendini düzenleyen bir sistem** sunar. 
-            Protokolümüz, her yeni token oluşturma girişiminde ekonomik engeller koyarak, yalnızca gerçekten yenilikçi projelerin hayatta kalmasını sağlar.
-        </p>
-
-        <h2 id="title3">Test Süreci</h2>
-        <p id="text3">
-            Şu anda, Terminus Protocol’ün temel mekanizmasını test etmek için bir ön aşama başlatılmıştır. Bu test süreci, sistemin işleyişini
-            gözlemlemek, topluluk geri bildirimlerini almak ve tam ölçekli lansman öncesinde gerekli iyileştirmeleri yapmak için kritik bir adımdır. 
-        </p>
-
-        <h2 id="title4">Gelecek Planları</h2>
-        <p id="text4">
-            Terminus Protocol, blockchain alanında devrim yaratacak yenilikçi bir sistemdir. Yol haritamızda, topluluk yönetişimi, gelişmiş güvenlik protokolleri 
-            ve büyük ölçekli entegrasyonlar yer almaktadır. Önümüzdeki süreçte, akıllı sözleşmelerin geliştirilmesi ve ağın genişletilmesi için çalışmalar devam edecektir.
-        </p>
+    <!-- Nasıl Çalışır? -->
+    <div class="infographic">
+        <div class="step">
+            <h3>1. Token Çıkar</h3>
+            <p>Yeni bir token oluşturmak istiyorsun</p>
+        </div>
+        <div class="step">
+            <h3>2. TTC Yak</h3>
+            <p>Geometrik artan miktarda TTC yak</p>
+        </div>
+        <div class="step">
+            <h3>3. AI Kontrolü</h3>
+            <p>Projen kalitesizse maliyet 10x artar</p>
+        </div>
     </div>
 
-    <footer>
-        © 2025 Terminus Protocol - Tüm Hakları Saklıdır
-    </footer>
-
-    <script>
-        let language = "tr";
-
-        function changeLanguage() {
-            if (language === "tr") {
-                document.getElementById("title1").innerText = "What is Terminus Protocol?";
-                document.getElementById("text1").innerText = "Terminus Protocol is a revolutionary protocol aiming to start a new era in the digital asset ecosystem. Our goal is to create a mechanism that systematically prevents unnecessary token inflation, eliminating low-quality projects in the industry and building a sustainable ecosystem.";
-
-                document.getElementById("title2").innerText = "Why Terminus?";
-                document.getElementById("text2").innerText = "Every day, thousands of new tokens are created in the cryptocurrency market. This creates excessive saturation and poses significant risks for investors. Terminus Protocol offers a **self-regulating system based on mathematics** to address this problem. Our protocol imposes economic barriers to every new token creation attempt, ensuring that only truly innovative projects survive.";
-
-                document.getElementById("title3").innerText = "Test Process";
-                document.getElementById("text3").innerText = "Currently, an initial phase has been launched to test the core mechanism of Terminus Protocol. This testing phase is a critical step to observe the system's functioning, gather community feedback, and make necessary improvements before the full-scale launch.";
-
-                document.getElementById("title4").innerText = "Future Plans";
-                document.getElementById("text4").innerText = "Terminus Protocol is an innovative system that will revolutionize the blockchain space. Our roadmap includes community governance, advanced security protocols, and large-scale integrations. In the upcoming period, efforts will continue for smart contract development and network expansion.";
-
-                document.querySelector(".language-btn").innerText = "Türkçe";
-                language = "en";
-            } else {
-                document.getElementById("title1").innerText = "Terminus Protocol Nedir?";
-                document.getElementById("text1").innerText = "Terminus Protocol, dijital varlık ekosisteminde yeni bir dönemi başlatmayı amaçlayan devrim niteliğinde bir protokoldür. Amacımız, gereksiz token enflasyonunu sistematik olarak önleyen bir mekanizma oluşturarak sektördeki kalitesiz projeleri ortadan kaldırmak ve sürdürülebilir bir ekosistem yaratmaktır.";
-
-                document.getElementById("title2").innerText = "Neden Terminus?";
-                document.getElementById("text2").innerText = "Kripto para piyasasında her gün binlerce yeni token yaratılıyor. Bu da piyasada aşırı doygunluk yaratıyor ve yatırımcılar için büyük riskler doğuruyor.";
-
-                document.querySelector(".language-btn").innerText = "English";
-                language = "tr";
-            }
-        }
-    </script>
-
+    <!-- İstatistikler -->
+    <div class="stats">
+        <div class="stat-box">
+            <h3>500+</h3>
+            <p>Günlük Yeni Token</p>
+        </div>
+        <div class="stat-box">
+            <h3>10x</h3>
+            <p>Terminus ile Maliyet Artışı</p>
+        </div>
+    </div>
 </body>
 </html>
