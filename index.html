@@ -41,25 +41,34 @@
         }
 
         /* GÖRSEL STİLLERİ */
-        .terminus-image {
+        .header-image {
             width: 100%;
             max-width: 800px;
+            height: 400px;
+            object-fit: cover;
             margin: 30px auto;
             border-radius: 15px;
             border: 3px solid #3B82F6;
-            box-shadow: 0 0 25px rgba(59,130,246,0.3);
             display: block;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: contain;
+            margin: 20px auto;
         }
 
         /* BÖLÜMLER */
         .header {
             text-align: center;
-            padding: 100px 20px 50px;
+            padding: 50px 20px 30px;
         }
 
         .content-section {
             max-width: 1200px;
-            margin: 50px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
@@ -67,7 +76,6 @@
             text-align: center;
             padding: 50px 20px;
             background: rgba(255,255,255,0.05);
-            margin-top: 100px;
         }
     </style>
 </head>
@@ -75,37 +83,36 @@
     <!-- DİL BUTONU -->
     <button class="lang-btn" onclick="toggleLanguage()">EN/TR</button>
 
-    <!-- HEADER -->
+    <!-- BAŞLIK BÖLÜMÜ -->
     <header class="header">
         <h1 id="mainTitle">TERMİNUS PROTOKOLÜ</h1>
         <p id="subTitle">Geleceğin Blockchain Çözümü</p>
         <img 
-            src="images/terminus-gorsel.png.webp" <!-- GÜNCELLENDİ -->
+            src="images/terminus-gorsel.png.webp"
             alt="Terminus Ana Görsel" 
-            class="terminus-image"
+            class="header-image"
         >
     </header>
 
-    <!-- İÇERİK BÖLÜMÜ 1 -->
+    <!-- İÇERİK BÖLÜMÜ -->
     <section class="content-section">
         <h2 id="section1Title">Nasıl Çalışır?</h2>
-        <p id="section1Text">Protokolümüz matematiksel olarak kendini düzenleyen...</p>
+        <p id="section1Text">Protokolümüz matematiksel olarak kendini düzenleyen bir sistemle çalışır. Yeni token oluşturma işlemlerini ekonomik olarak kontrol altına alarak piyasa istikrarını sağlar.</p>
+        
         <img 
-            src="images/terminus-gorsel.png.webp" <!-- GÜNCELLENDİ -->
-            alt="Çalışma Mekanizması" 
-            class="terminus-image"
-            style="max-width: 600px;"
+            src="images/terminus-gorsel.png.webp"
+            alt="Çalışma Şeması" 
+            class="content-image"
         >
+
+        <h2 id="section2Title">Avantajlarımız</h2>
+        <p id="section2Text">• Otomatik denge mekanizması<br>
+           • AI destekli proje analizi<br>
+           • Şeffaf yönetişim modeli</p>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <img 
-            src="images/terminus-gorsel.png.webp" <!-- GÜNCELLENDİ -->
-            alt="Footer Logosu" 
-            class="terminus-image"
-            style="max-width: 300px;"
-        >
         <p id="footerText">© 2024 Terminus Protocol. Tüm hakları saklıdır.</p>
     </footer>
 
@@ -117,14 +124,18 @@
                 mainTitle: "TERMİNUS PROTOKOLÜ",
                 subTitle: "Geleceğin Blockchain Çözümü",
                 section1Title: "Nasıl Çalışır?",
-                section1Text: "Protokolümüz matematiksel olarak kendini düzenleyen...",
+                section1Text: "Protokolümüz matematiksel olarak kendini düzenleyen bir sistemle çalışır. Yeni token oluşturma işlemlerini ekonomik olarak kontrol altına alarak piyasa istikrarını sağlar.",
+                section2Title: "Avantajlarımız",
+                section2Text: "• Otomatik denge mekanizması<br>• AI destekli proje analizi<br>• Şeffaf yönetişim modeli",
                 footerText: "© 2024 Terminus Protocol. Tüm hakları saklıdır."
             },
             en: {
                 mainTitle: "TERMINUS PROTOCOL",
                 subTitle: "Future of Blockchain Solutions",
                 section1Title: "How It Works?",
-                section1Text: "Our protocol is mathematically self-regulating...",
+                section1Text: "Our protocol operates through a self-regulating mathematical system. It maintains market stability by economically controlling new token creation processes.",
+                section2Title: "Our Advantages",
+                section2Text: "• Automatic balancing mechanism<br>• AI-powered project analysis<br>• Transparent governance model",
                 footerText: "© 2024 Terminus Protocol. All rights reserved."
             }
         };
@@ -138,7 +149,9 @@
             document.getElementById('mainTitle').textContent = translations[currentLang].mainTitle;
             document.getElementById('subTitle').textContent = translations[currentLang].subTitle;
             document.getElementById('section1Title').textContent = translations[currentLang].section1Title;
-            document.getElementById('section1Text').textContent = translations[currentLang].section1Text;
+            document.getElementById('section1Text').innerHTML = translations[currentLang].section1Text;
+            document.getElementById('section2Title').textContent = translations[currentLang].section2Title;
+            document.getElementById('section2Text').innerHTML = translations[currentLang].section2Text;
             document.getElementById('footerText').textContent = translations[currentLang].footerText;
         }
     </script>
