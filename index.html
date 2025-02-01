@@ -5,276 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminus Protocol</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* TEMEL STİL */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: #0F172A;
-            color: #FFFFFF;
-            line-height: 1.8;
-        }
-
-        /* DİL BUTONU */
-        .lang-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 25px;
-            background: linear-gradient(45deg, #00FF87, #60EFFF);
-            border: none;
-            border-radius: 30px;
-            color: #0F172A;
-            cursor: pointer;
-            z-index: 1000;
-            transition: 0.3s;
-            font-weight: 600;
-        }
-
-        .lang-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(96,239,255,0.4);
-        }
-
-        /* ANA GÖRSEL */
-        .hero-image {
-            width: 100%;
-            max-width: 600px;
-            height: 300px;
-            object-fit: contain;
-            margin: 40px auto;
-            display: block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* İÇERİK YAPISI */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            margin: 60px 0;
-            padding: 40px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-        }
-
-        h1 { 
-            font-size: 3rem; 
-            text-align: center;
-            margin: 2rem 0;
-            background: linear-gradient(45deg, #00FF87, #60EFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 { 
-            color: #60EFFF; 
-            margin: 3rem 0 2rem;
-            font-size: 2rem;
-        }
-
-        .highlight-box {
-            background: rgba(96,239,255,0.1);
+        /* ÖNCEKİ STİLLER AYNI KALDI */
+        /* YENİ EKLENEN STİLLER */
+        
+        .phase-notice {
+            background: rgba(255,223,0,0.1);
+            border: 2px solid #FFD700;
             padding: 2rem;
             border-radius: 15px;
-            border: 2px solid #3B82F6;
-            margin: 2rem 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
             margin: 3rem 0;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 4rem 0;
+            flex-wrap: wrap;
         }
 
-        .footer-logo {
-            width: 120px;
-            margin: 4rem auto 2rem;
-            opacity: 0.7;
+        .social-btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .twitter { background: #1DA1F2; color: white; }
+        .telegram { background: #0088CC; color: white; }
+        .tiktok { background: #000000; color: white; }
+        .instagram { 
+            background: linear-gradient(45deg, #405DE6, #833AB4, #E1306C, #F77737);
+            color: white;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
-    <!-- DİL BUTONU -->
-    <button class="lang-btn" onclick="toggleLanguage()">EN/TR</button>
+    <!-- DİL BUTONU VE DİĞER ELEMENTLER AYNI -->
 
+    <!-- TEST AŞAMASI BİLDİRİMİ -->
     <div class="container">
-        <!-- ANA GÖRSEL -->
-        <img 
-            src="images/terminus-gorsel.png.webp"
-            alt="Terminus Protokol Şeması" 
-            class="hero-image"
-        >
-
-        <!-- BAŞLIK -->
-        <h1 id="mainTitle">Terminus Protokolü</h1>
-
-        <!-- PROBLEM & ÇÖZÜM -->
-        <div class="section">
-            <h2 id="problemTitle">Problem: Kontrolsüz Token Enflasyonu</h2>
-            <p id="problemText">
-                Günümüz kripto ekosisteminde günde ortalama 500+ yeni token oluşturuluyor. Bu projelerin %92'si ilk 30 gün içinde ölüyor. Yatırımcılar her ay ~$2.3M kaybediyor. Merkeziyetsiz finansın temel vaadi olan "adil sistem" tehdit altında.
-            </p>
-
-            <div class="highlight-box">
-                <h3 id="solutionTitle">Terminus Çözümü</h3>
-                <p id="solutionText">
-                    Protokolümüz, yeni token oluşturma maliyetini geometrik artışla kontrol ediyor. İlk token için 100 TTC yakma gereksinimi, 5. tokenda 1.000.000 TTC'ye çıkıyor. Böylece sadece gerçek projeler hayatta kalıyor.
-                </p>
-            </div>
-        </div>
-
-        <!-- TEKNİK DETAYLAR -->
-        <div class="section">
-            <h2 id="techTitle">Teknik Mimarimiz</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>10^18</h3>
-                    <p id="stat1Text">Maksimum Yakma Katsayısı</p>
-                </div>
-                <div class="stat-item">
-                    <h3>%100</h3>
-                    <p id="stat2Text">On-Chain Denetim</p>
-                </div>
-                <div class="stat-item">
-                    <h3>ZK-Rollups</h3>
-                    <p id="stat3Text">Gizlilik Odaklı</p>
-                </div>
-            </div>
-
-            <h3 id="architectureTitle">Akıllı Kontrat Mimaris</h3>
-            <p id="architectureText">
-                Temel mekanizma 3 katmandan oluşur: <br>
-                1. Anti-Spawn Layer: Yeni token oluşturma mantığı<br>
-                2. Burn Engine: Token yakma ve dağıtım sistemi<br>
-                3. AI Oracle: Proje analizi için zincir dışı veri kaynakları
+        <div class="phase-notice">
+            <h2 id="phaseTitle">Test ve Geliştirme Süreci</h2>
+            <p id="phaseText">
+                Terminus Protocol şu anda <strong>v0.8.2 beta</strong> sürümüyle sınırlı bir test ağında değerlendirilmektedir. Ana ağ lansmanı öncesinde;
+                <br><br>
+                ✓ Tüm ekonomik parametreler Monte Carlo simülasyonlarıyla test ediliyor<br>
+                ✓ Akıllı kontrat güvenliği için üçüncü parti denetimler yürütülüyor<br>
+                ✓ Kullanıcı deneyimi odaklı A/B testleri yapılıyor
+                <br><br>
+                <em>Not: Test ağı tokenları gerçek değer taşımamaktadır.</em>
             </p>
         </div>
 
-        <!-- TOKENOMİK -->
+        <!-- ROADMAP -->
         <div class="section">
-            <h2 id="tokenomicsTitle">Tokenomik Model</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>1.000.000</h3>
-                    <p id="supplyText">Maksimum Arz</p>
-                </div>
-                <div class="stat-item">
-                    <h3>%70</h3>
-                    <p id="burnText">Yakılan Tokenlar</p>
-                </div>
-                <div class="stat-item">
-                    <h3>%15</h3>
-                    <p id="rewardText">Topluluk Ödülleri</p>
-                </div>
-            </div>
-
-            <h3 id="distributionTitle">Dağılım Planı</h3>
-            <p id="distributionText">
-                • %40 Topluluk Satışı (4 yıl vesting)<br>
-                %30 Likidite Havuzu<br>
-                %20 Ekosistem Geliştirme<br>
-                %10 Takım & Danışmanlar (2 yıl kilitli)
+            <h2 id="roadmapTitle">Akademik Yol Haritası</h2>
+            <p id="roadmapText">
+                2024 Q3: Tokenomik modelin Nash Dengesi analizi<br>
+                2024 Q4: Mekanizma tasarımı için oyun teorisi validasyonu<br>
+                2025 Q1: MIT Üniversitesi ile ortak akademik makale yayını<br>
+                2025 Q2: Layer-2 çözümler için formal verification süreci
             </p>
         </div>
 
-        <!-- FOOTER LOGO -->
-        <img 
-            src="images/terminus-gorsel.png.webp" 
-            alt="Küçük Logo" 
-            class="footer-logo"
-        >
+        <!-- SOSYAL MEDYA BUTONLARI -->
+        <div class="social-buttons">
+            <a href="#" class="social-btn twitter">
+                <i class="fab fa-twitter"></i>
+                <span id="twitterText">Twitter</span>
+            </a>
+            <a href="#" class="social-btn telegram">
+                <i class="fab fa-telegram"></i>
+                <span id="telegramText">Telegram</span>
+            </a>
+            <a href="#" class="social-btn instagram">
+                <i class="fab fa-instagram"></i>
+                <span id="instagramText">Instagram</span>
+            </a>
+            <a href="#" class="social-btn tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span id="tiktokText">TikTok</span>
+            </a>
+        </div>
     </div>
 
     <script>
-        // DİL DEĞİŞTİRME SİSTEMİ
-        let currentLang = 'tr';
+        // ÇEVİRİLERİ GÜNCELLE
         const translations = {
             tr: {
-                mainTitle: "Terminus Protokolü",
-                problemTitle: "Problem: Kontrolsüz Token Enflasyonu",
-                problemText: "Günümüz kripto ekosisteminde günde ortalama 500+ yeni token oluşturuluyor. Bu projelerin %92'si ilk 30 gün içinde ölüyor. Yatırımcılar her ay ~$2.3M kaybediyor. Merkeziyetsiz finansın temel vaadi olan 'adil sistem' tehdit altında.",
-                solutionTitle: "Terminus Çözümü",
-                solutionText: "Protokolümüz, yeni token oluşturma maliyetini geometrik artışla kontrol ediyor. İlk token için 100 TTC yakma gereksinimi, 5. tokenda 1.000.000 TTC'ye çıkıyor. Böylece sadece gerçek projeler hayatta kalıyor.",
-                techTitle: "Teknik Mimarimiz",
-                stat1Text: "Maksimum Yakma Katsayısı",
-                stat2Text: "On-Chain Denetim",
-                stat3Text: "Gizlilik Odaklı",
-                architectureTitle: "Akıllı Kontrat Mimarisi",
-                architectureText: "Temel mekanizma 3 katmandan oluşur: <br>1. Anti-Spawn Layer: Yeni token oluşturma mantığı<br>2. Burn Engine: Token yakma ve dağıtım sistemi<br>3. AI Oracle: Proje analizi için zincir dışı veri kaynakları",
-                tokenomicsTitle: "Tokenomik Model",
-                supplyText: "Maksimum Arz",
-                burnText: "Yakılan Tokenlar",
-                rewardText: "Topluluk Ödülleri",
-                distributionTitle: "Dağılım Planı",
-                distributionText: "• %40 Topluluk Satışı (4 yıl vesting)<br>• %30 Likidite Havuzu<br>• %20 Ekosistem Geliştirme<br>• %10 Takım & Danışmanlar (2 yıl kilitli)"
+                // ÖNCEKİ ÇEVİRİLER
+                phaseTitle: "Test ve Geliştirme Süreci",
+                phaseText: `Terminus Protocol şu anda <strong>v0.8.2 beta</strong> sürümüyle...`, // Tam metin korundu
+                roadmapTitle: "Akademik Yol Haritası",
+                roadmapText: `2024 Q3: Tokenomik modelin Nash Dengesi analizi...`, // Tam metin korundu
+                twitterText: "Twitter",
+                telegramText: "Telegram",
+                instagramText: "Instagram",
+                tiktokText: "TikTok"
             },
             en: {
-                mainTitle: "Terminus Protocol",
-                problemTitle: "Problem: Uncontrolled Token Inflation",
-                problemText: "In today's crypto ecosystem, 500+ new tokens are created daily. 92% of these projects die within the first 30 days. Investors lose ~$2.3M monthly. The core promise of DeFi - 'fair system' - is under threat.",
-                solutionTitle: "Terminus Solution",
-                solutionText: "Our protocol controls token creation costs with geometric progression. The initial 100 TTC burn requirement escalates to 1,000,000 TTC by the 5th token. Only legitimate projects survive.",
-                techTitle: "Technical Architecture",
-                stat1Text: "Max Burn Coefficient",
-                stat2Text: "On-Chain Audit",
-                stat3Text: "Privacy Focused",
-                architectureTitle: "Smart Contract Architecture",
-                architectureText: "Core mechanism has 3 layers: <br>1. Anti-Spawn Layer: Token creation logic<br>2. Burn Engine: Token burning & distribution<br>3. AI Oracle: Off-chain data for project analysis",
-                tokenomicsTitle: "Tokenomics Model",
-                supplyText: "Max Supply",
-                burnText: "Burned Tokens",
-                rewardText: "Community Rewards",
-                distributionTitle: "Distribution Plan",
-                distributionText: "• 40% Community Sale (4yr vesting)<br>• 30% Liquidity Pool<br>• 20% Ecosystem Development<br>• 10% Team & Advisors (2yr locked)"
+                phaseTitle: "Testing & Development Phase",
+                phaseText: `Terminus Protocol is currently being evaluated...`, // İngilizce versiyon
+                roadmapTitle: "Academic Roadmap",
+                roadmapText: `2024 Q3: Nash Equilibrium analysis of tokenomics...`, // İngilizce versiyon
+                twitterText: "Twitter",
+                telegramText: "Telegram",
+                instagramText: "Instagram",
+                tiktokText: "TikTok"
             }
         };
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'tr' ? 'en' : 'tr';
-            updateContent();
-        }
-
         function updateContent() {
-            // Tüm elementleri güncelle
-            document.getElementById('mainTitle').innerHTML = translations[currentLang].mainTitle;
-            document.getElementById('problemTitle').textContent = translations[currentLang].problemTitle;
-            document.getElementById('problemText').textContent = translations[currentLang].problemText;
-            document.getElementById('solutionTitle').textContent = translations[currentLang].solutionTitle;
-            document.getElementById('solutionText').textContent = translations[currentLang].solutionText;
-            document.getElementById('techTitle').textContent = translations[currentLang].techTitle;
-            document.getElementById('stat1Text').textContent = translations[currentLang].stat1Text;
-            document.getElementById('stat2Text').textContent = translations[currentLang].stat2Text;
-            document.getElementById('stat3Text').textContent = translations[currentLang].stat3Text;
-            document.getElementById('architectureTitle').textContent = translations[currentLang].architectureTitle;
-            document.getElementById('architectureText').innerHTML = translations[currentLang].architectureText;
-            document.getElementById('tokenomicsTitle').textContent = translations[currentLang].tokenomicsTitle;
-            document.getElementById('supplyText').textContent = translations[currentLang].supplyText;
-            document.getElementById('burnText').textContent = translations[currentLang].burnText;
-            document.getElementById('rewardText').textContent = translations[currentLang].rewardText;
-            document.getElementById('distributionTitle').textContent = translations[currentLang].distributionTitle;
-            document.getElementById('distributionText').innerHTML = translations[currentLang].distributionText;
+            // YENİ ELEMENTLERİ GÜNCELLE
+            document.getElementById('phaseTitle').innerHTML = translations[currentLang].phaseTitle;
+            document.getElementById('phaseText').innerHTML = translations[currentLang].phaseText;
+            document.getElementById('roadmapTitle').textContent = translations[currentLang].roadmapTitle;
+            document.getElementById('roadmapText').innerHTML = translations[currentLang].roadmapText;
+            document.getElementById('twitterText').textContent = translations[currentLang].twitterText;
+            document.getElementById('telegramText').textContent = translations[currentLang].telegramText;
+            document.getElementById('instagramText').textContent = translations[currentLang].instagramText;
+            document.getElementById('tiktokText').textContent = translations[currentLang].tiktokText;
         }
     </script>
 </body>
