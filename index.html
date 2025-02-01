@@ -1,81 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Hacker Tarzı Sitem!</title>
-    <style>
-        /* Matrix efekti için arkaplan ayarları */
-        body {
-            margin: 0;
-            background: black;
-            overflow: hidden;
-            color: #0f0; /* Yeşil renk */
-            font-family: 'Courier New', monospace;
-            text-align: center;
-        }
-
-        /* Yazılar için stil */
-        .guzel-sozler {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            text-shadow: 0 0 5px #0f0;
-        }
-
-        /* Matrix yağmuru için canvas */
-        #matrix {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminus Protocol – Test Aşaması</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="matrix"></canvas> <!-- Matrix efekti burada -->
+    <header>
+        <h1>🚀 Terminus Protocol – Test Aşaması</h1>
+    </header>
 
-    <div class="guzel-sozler">
-        <h1>✨ Bilgelik Yağmuru ✨</h1>
-        <p>"Kod yazmak, dünyayı değiştirmenin büyülü bir yoludur."</p>
-        <p>"Hatalar, henüz keşfedilmemiş çözümlerdir."</p>
-    </div>
+    <section class="intro">
+        <p>Kripto dünyasındaki spekülatif projeleri önlemeyi amaçlayan **Terminus Protocol**'ün ilk test aşamasına hoş geldiniz!</p>
+    </section>
 
-    <!-- Matrix efekti için JavaScript -->
-    <script>
-        // Matrix yağmuru kodu
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
+    <section class="content">
+        <h2>📌 Proje Hakkında</h2>
+        <p>
+            **Terminus Protocol**, blok zinciri tabanlı **token enflasyonunu önleyici** bir mekanizmayı test etmek için başlatılmıştır.
+            Bu süreçteki tüm piyasa verileri ve kullanıcı geri bildirimleri, **orijinal Terminus Protocol’ün tam ölçekli geliştirilmesi** için kullanılacaktır.
+        </p>
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        <h2>🛠 Teknik Yapı</h2>
+        <ul>
+            <li><b>Ağ:</b> Solana (SPL Token)</li>
+            <li><b>Dağıtım Modeli:</b> Adil Lansman (Fair Launch)</li>
+            <li><b>Toplam Arz:</b> [Belirlenecek]</li>
+            <li><b>Yakım Mekanizması:</b> Deflasyonist model</li>
+        </ul>
 
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-        const drops = [];
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
+        <h2>⚠️ Önemli Uyarı</h2>
+        <p>
+            Bu proje **yatırım tavsiyesi değildir.** Token yalnızca test amaçlı olup, herhangi bir finansal taahhüt içermez.
+            Terminus Protocol’ün nihai versiyonu, **topluluktan gelen geri bildirimlere göre şekillenecektir**.
+        </p>
 
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
-        }
+        <h2>🌍 Bizi Takip Edin</h2>
+        <ul>
+            <li>📢 <b>Twitter:</b> <a href="#">@terminusprotocol</a></li>
+            <li>💬 <b>Telegram:</b> <a href="#">@terminusprotocol</a></li>
+            <li>🌐 <b>Web:</b> terminusprotocol.github.io</li>
+        </ul>
+    </section>
 
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#0f0';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(drawMatrix, 50);
-    </script>
+    <footer>
+        <p>© 2024 Terminus Protocol | Tüm hakları saklıdır.</p>
+    </footer>
 </body>
 </html>
