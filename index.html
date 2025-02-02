@@ -3,41 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Terzi Atölyesi | Özel Dikim & Tamir</title>
+    <title>RAMENES GİYİM | Özel Dikim & Profesyonel Tamir</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e67e22;
+            --primary-color: #1a1a1a;
+            --secondary-color: #c19b76;
+            --whatsapp-color: #25D366;
         }
         
         body {
-            font-family: 'Georgia', serif;
-            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
         }
         
-        .navbar {
-            background-color: var(--primary-color)!important;
-            border-bottom: 3px solid var(--secondary-color);
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary-color)!important;
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1598522325074-042db73a0a9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             height: 80vh;
             background-size: cover;
-            background-position: center;
+            background-position: center 70%;
             color: white;
         }
         
         .service-card {
             transition: transform 0.3s;
             border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 999;
+            background: var(--whatsapp-color);
+            color: white!important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .instagram-btn {
@@ -54,11 +72,11 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
-        .instagram-btn:hover {
-            transform: scale(1.1);
-            background: #C13584;
+        .social-btn:hover {
+            transform: scale(1.15) rotate(5deg);
         }
         
         .language-switcher {
@@ -66,26 +84,40 @@
             top: 100px;
             right: 20px;
             z-index: 999;
+            background: white;
+            padding: 5px;
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .gold-text {
+            color: var(--secondary-color);
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <!-- Dil Değiştirici -->
     <div class="language-switcher">
-        <button class="btn btn-sm btn-outline-secondary" onclick="changeLanguage('tr')">TR</button>
-        <button class="btn btn-sm btn-outline-secondary" onclick="changeLanguage('en')">EN</button>
+        <button class="btn btn-sm btn-outline-dark" onclick="changeLanguage('tr')">TR</button>
+        <button class="btn btn-sm btn-outline-dark" onclick="changeLanguage('en')">EN</button>
     </div>
 
+    <!-- WhatsApp Butonu -->
+    <a href="https://wa.me/905378705284" target="_blank" class="whatsapp-btn social-btn">
+        <i class="fab fa-whatsapp fa-lg"></i>
+    </a>
+
     <!-- Instagram Butonu -->
-    <a href="https://instagram.com/terzihesabi" target="_blank" class="instagram-btn">
+    <a href="https://instagram.com/ramenesgiyim" target="_blank" class="instagram-btn social-btn">
         <i class="fab fa-instagram fa-lg"></i>
     </a>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Elite Terzi" height="40">
+                RAMENES GİYİM
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -103,23 +135,24 @@
     <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center">
         <div class="container text-center">
-            <h1 class="display-4 mb-4" data-tr="Özel Dikim & Lüks Tamirat" data-en="Custom Tailoring & Luxury Repairs">Özel Dikim & Lüks Tamirat</h1>
-            <p class="lead mb-4" data-tr="40 yıllık ustalık ve zarafet..." data-en="40 years of craftsmanship and elegance...">40 yıllık ustalık ve zarafet...</p>
-            <a href="#contact" class="btn btn-lg btn-warning" data-tr="Randevu Al" data-en="Book Appointment">Randevu Al</a>
+            <h1 class="display-4 mb-4" data-tr="Mükemmel Uyum İçin" data-en="For Perfect Fit">Mükemmel Uyum İçin</h1>
+            <p class="lead mb-4 fs-3" data-tr="35 Yıllık <span class='gold-text'>Ustalık</span>" 
+               data-en="35 Years of <span class='gold-text'>Craftsmanship</span>">35 Yıllık <span class='gold-text'>Ustalık</span></p>
+            <a href="#contact" class="btn btn-lg btn-dark px-5 py-3" data-tr="Hemen İletişime Geç" data-en="Contact Now">Hemen İletişime Geç</a>
         </div>
     </section>
 
     <!-- Services -->
     <section id="services" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
+            <h2 class="text-center mb-5 fw-bold" data-tr="Uzmanlık Alanlarımız" data-en="Our Expertise">Uzmanlık Alanlarımız</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card service-card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-cut fa-3x text-primary mb-3"></i>
-                            <h5 data-tr="Özel Dikim" data-en="Custom Tailoring">Özel Dikim</h5>
-                            <p data-tr="Kişiye özel erkek ve kadın giyimi..." data-en="Custom menswear and womenswear...">Kişiye özel erkek ve kadın giyimi...</p>
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-ruler-combined fa-3x gold-text mb-4"></i>
+                            <h4 class="mb-3" data-tr="Özel Dikim" data-en="Custom Tailoring">Özel Dikim</h4>
+                            <p data-tr="Kişiye özel erkek ve kadın giyim üretimi" data-en="Custom menswear and womenswear production">Kişiye özel erkek ve kadın giyim üretimi</p>
                         </div>
                     </div>
                 </div>
@@ -129,16 +162,15 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5 bg-dark text-white">
         <div class="container text-center">
-            <h2 class="mb-4" data-tr="İletişim" data-en="Contact">İletişim</h2>
-            <div class="mb-4">
-                <a href="tel:+905378705284" class="btn btn-success btn-lg">
+            <h2 class="mb-4" data-tr="Bize Ulaşın" data-en="Reach Us">Bize Ulaşın</h2>
+            <div class="d-flex flex-column align-items-center">
+                <a href="tel:+905378705284" class="btn btn-lg btn-outline-light mb-3 px-5">
                     <i class="fas fa-phone-alt me-2"></i>+90 (537) 870 52 84
                 </a>
+                <p class="mt-3" data-tr="Adres: Şişli, İstanbul" data-en="Address: Şişli, Istanbul">Adres: Şişli, İstanbul</p>
             </div>
-            <p data-tr="Çalışma Saatleri: 09:00 - 19:00 (Pazartesi - Cumartesi)" 
-               data-en="Working Hours: 09:00 - 19:00 (Monday - Saturday)">Çalışma Saatleri: 09:00 - 19:00 (Pazartesi - Cumartesi)</p>
         </div>
     </section>
 
@@ -147,9 +179,9 @@
         function changeLanguage(lang) {
             document.querySelectorAll('[data-tr]').forEach(element => {
                 if(lang === 'tr') {
-                    element.textContent = element.getAttribute('data-tr');
+                    element.innerHTML = element.getAttribute('data-tr');
                 } else if(lang === 'en') {
-                    element.textContent = element.getAttribute('data-en');
+                    element.innerHTML = element.getAttribute('data-en');
                 }
             });
         }
